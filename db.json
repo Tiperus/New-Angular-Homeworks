@@ -1,0 +1,63 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "dataPhone": [
+    {
+      "id": 1,
+      "firstName": "Taras",
+      "lastName": "Ponomarenko",
+      "phoneNumber": 123
+    },
+    {
+      "id": 3,
+      "firstName": "Vasyl",
+      "lastName": "Vasyliv",
+      "phoneNumber": 234
+    },
+    {
+      "id": 4,
+      "firstName": "wer",
+      "lastName": "wer",
+      "phoneNumber": 345
+    },
+    {
+      "id": 5,
+      "firstName": "asdasdasdasd",
+      "lastName": "asd",
+      "phoneNumber": 456
+    },
+    {
+      "id": 6,
+      "firstName": "Maria ",
+      "lastName": "asddfg",
+      "phoneNumber": 765
+    },
+    {
+      "id": 7,
+      "firstName": "Maria ",
+      "lastName": "Ponmarenko",
+      "phoneNumber": 765
+    },
+    {
+      "id": 8,
+      "firstName": "Marko",
+      "lastName": "Guzar",
+      "phoneNumber": 987
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Phone Nunber</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr >
+            <td></td>
+            <td></td>
+            <td><input type="text" [(ngModel)]="noteFirstName" name="noteFirstName" id="noteFirstName"></td>
+            <td><input type="text" [(ngModel)]="noteLastName" name="noteLastName" id="noteLastName"></td>
+            <td><input type="number" [(ngModel)]="notePhone" name="notePhone" id="notePhone"></td>
+            <td><button type="button" class="btn btn-warning" (click)="addNewPhone()" [disabled]="statusData">Add</button></td>
+            <td><button type="button" class="btn btn-danger" (click)="saveEdit()" [disabled]="!statusData">Edit</button></td>
+        </tr>
+      <tr *ngFor="let phone of myDataPhone | search: noteLastName; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{phone.id}}</td>
+        <td>{{phone.firstName}}</td>
+        <td>{{phone.lastName}}</td>
+        <td>{{phone.phoneNumber}}</td>
+        <td><button type="button" class="btn btn-warning" (click)="editPhone(i, phone)">Edit</button></td>
+        <td><button (click)="deletePhone(i, phone.id)" type="button" class="btn btn-danger">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>

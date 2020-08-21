@@ -1,0 +1,10 @@
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link" [routerLink]="[ 'matTable' ]" routerLinkActive="active">Elementary</a>
+    <a class="nav-item nav-link" [routerLink]="[ 'phone' ]" routerLinkActive="active">Phonebook</a>
+    </div>
+</nav>
+  <div class="tab-content" id="nav-tabContent">
+    <router-outlet></router-outlet>
+  </div>
+
