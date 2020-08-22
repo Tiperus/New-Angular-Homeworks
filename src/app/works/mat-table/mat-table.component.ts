@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { AllServicesService } from 'src/app/shared/services/all-services.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class MatTableComponent implements OnInit {
     // {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
     // {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
   ];
-
+  subscription: Subscription;
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'phoneNumber'];
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
@@ -40,8 +41,13 @@ export class MatTableComponent implements OnInit {
     // this.dataSource.sort = this.sort;
   
   }
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.subscription.unsubscribe();
+  }
   getPhoneData(): void {
-    this._phoneNumber.getArrPhoneNumber().subscribe(data => {
+   this.subscription=this._phoneNumber.getArrPhoneNumber().subscribe(data => {
       this.ELEMENT_DATA=data;
       this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
       this.dataSource.sort = this.sort;
