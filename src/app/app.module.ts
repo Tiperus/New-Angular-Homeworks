@@ -4,6 +4,7 @@ import { FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
+import {ReactiveFormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,10 @@ import { WorksComponent } from './works/works.component';
 import { MatTableComponent } from './works/mat-table/mat-table.component';
 import { PhonebookComponent } from './works/phonebook/phonebook.component';
 import { SearchPipe } from './shared/pipe/search.pipe';
+import { ChatComponent } from './works/chat/chat.component';
+import { ChatAdminComponent } from './works/chat-admin/chat-admin.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 
 
@@ -21,7 +26,9 @@ import { SearchPipe } from './shared/pipe/search.pipe';
     WorksComponent,
     MatTableComponent,
     PhonebookComponent,
-    SearchPipe
+    SearchPipe,
+    ChatComponent,
+    ChatAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +37,9 @@ import { SearchPipe } from './shared/pipe/search.pipe';
     FormsModule,
     MatTableModule,
     MatSortModule,
-    HttpClientModule
+    HttpClientModule,
+    ModalModule.forRoot(),
+    ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,187 @@
+<button type="button" class="btn btn-primary ml-5 mt-2" (click)="openModal(template1)">Sing in</button>
+<button type="button" class="btn btn-primary ml-5 mt-2" (click)="openModal(template2)">Login</button>
+<button type="button" class="btn btn-primary ml-5 mt-2" (click)="openModal(template3)">Admin</button>
+ <br>
+<ng-template #template1>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Sing in</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()" (mouseup)="clear()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="singInForm" class="border-0 " (ngSubmit)="singIn(singInForm)">
+        <div class="input-group flex-nowrap mb-2">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">@</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" formControlName="name" [(ngModel)]="name" name="name" (onblur)="checkName(singInForm)">
+            </div>
+            <div [hidden]="!nameValid" class="alert alert-danger">Таке ім'я вже існує</div>
+          
+
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail3" formControlName="email" [(ngModel)]="email" name="email" >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" formControlName="password" [(ngModel)]="password" name="password">
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+          <div class="col-sm-3">
+            <button type="submit" [disabled]="!singInForm.valid||checkName(singInForm)" class="btn btn-success" (click)="modalRef.hide()" >Sign in</button>
+          </div>
+          <div class="col-sm-6">
+            <button type="button" class="btn btn-primary"  (click)="modalRef.hide()" (mouseup)="clear()">Close</button>
+          </div>
+        </div>
+      </form>
+
+  </div>
+</ng-template>
+
+
+<!-- ________2______________________ -->
+
+<ng-template #template2>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Login</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="loginForm" class="border-0 p-2" (ngSubmit)="openChat(loginForm)">
+
+          <div class="form-group row ">
+            <label for="inputEmail32" class="col-sm-2 col-form-label" >Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail32" formControlName="loginName" [(ngModel)]="loginName" name="loginName" (onblur) = "checkLoginName(loginForm)">
+            </div>
+          </div>
+              <div [hidden]="nameLoginValid" class="alert alert-danger col-sm-12">Невірне ім'я</div>
+            
+          
+          <div class="form-group row">
+            <label for="inputPassword32" class="col-sm-2 col-form-label" >Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPassword32" formControlName="loginPassword" [(ngModel)]="loginPassword" name="loginPassword"  (blur)="checkLoginPassword(loginForm)">
+            </div>
+          </div>
+          <div [hidden]="passwordLoginValid" class="alert alert-danger">Невірний пароль</div>
+  
+  
+          <div class="form-group row">
+            <div class="col-sm-3">
+              <button type="submit" [disabled]="!loginForm.valid||checkLoginName(loginForm)&&!checkLoginPassword(loginForm)" class="btn btn-success" (click)="modalRef.hide()">Login</button>
+            </div>
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-primary"  (click)="modalRef.hide()">Close</button>
+            </div>
+          </div>
+        </form>
+  
+    </div>
+  </ng-template>
+
+  <!-- ________3________ -->
+
+  <ng-template #template3>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Sing in admin</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="singAdmin" >
+   
+          <div class="form-group row">
+            <label for="inputEmail33" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail33" formControlName="adminName">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword33" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPassword33" formControlName="adminPassword" (blur) = "openAdmin(singAdmin)">
+            </div>
+          </div>
+  
+  
+          <div class="form-group row">
+            <div class="col-sm-3">
+              <button type="button" [disabled]="!singAdmin.valid" class="btn btn-success" [routerLink]="[ 'admin-chat' ]">Sign in</button>
+            </div>
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-primary"  (click)="modalRef.hide()">Close</button>
+            </div>
+          </div>
+        </form>
+  
+    </div>
+  </ng-template>
+
+
+
+  <button *ngIf="loginStatusUser" type="button" class="btn btn-success m-3" (click)="openModal(template4)">Add messege</button>
+  <ng-template #template4>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Add messege</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="chatMessege" class="border-0 p-2" (ngSubmit)="addMessege(chatMessege)">
+      <div class="input-group flex-nowrap">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="addon-wrapping">Title</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" formControlName="title" [(ngModel)]="myTitle" name="myTitle">
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Messege</span>
+        </div>
+        <textarea class="form-control" aria-label="With textarea" formControlName="messege" [(ngModel)]="myMessege" name="myMessege"></textarea>
+      </div>
+      <button type="submit" [disabled]="!chatMessege.valid||statusAddEditChat" class="btn btn-success" (click)="modalRef.hide()">Add</button>
+      <button type="button" [disabled]="!statusAddEditChat" class="btn btn-warning" (click)="saveEditMessege(chatMessege)" (mouseup) = "modalRef.hide()">Edit</button>
+    </form>
+    </div>
+  </ng-template>
+
+
+  <!-- ___________________table -->
+  <table class="table table-dark" *ngIf="loginStatusUser">
+    <thead>
+        <tr >
+            <th scope="col">Messege Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Title</th>
+            <th scope="col">Date</th>
+            <th scope="col">Messege</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let m of chatContent; let i=index" >
+          <th>{{m.id}}</th>
+          <td>{{m.postedBy}}</td>
+          <td>{{m.topic}}</td>
+          <td >{{m.date|date:'short'}}</td>
+          <td >{{m.message}}</td>
+          <td><button type="button" [disabled]="posibleEditDeletChat(m.postedBy)" (click)="editMessegefromArr(m,template4,i)" class="btn btn-warning"> Edit </button></td>
+          <td><button type="button" [disabled]="posibleEditDeletChat(m.postedBy)" (click)="deleteMassegefromArr(m)" class="btn btn-danger">Delete</button></td>
+        </tr>      
+</table>

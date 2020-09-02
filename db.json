@@ -24,18 +24,6 @@
       "phoneNumber": 123
     },
     {
-      "id": 3,
-      "firstName": "Vasyl",
-      "lastName": "Vasyliv",
-      "phoneNumber": 234
-    },
-    {
-      "id": 5,
-      "firstName": "asdasdasdasd",
-      "lastName": "asd",
-      "phoneNumber": 456
-    },
-    {
       "id": 6,
       "firstName": "Maria ",
       "lastName": "asddfg",
@@ -45,13 +33,151 @@
       "id": 7,
       "firstName": "Maria ",
       "lastName": "Ponmarenko",
-      "phoneNumber": 765
+      "phoneNumber": 765345
     },
     {
       "id": 8,
       "firstName": "Marko",
       "lastName": "Guzar",
       "phoneNumber": 987
+    }
+  ],
+  "dataUsers": [
+    {
+      "id": 1,
+      "username": "Taras",
+      "email": "tiperus@gmail.com",
+      "password": "asd"
+    },
+    {
+      "id": 2,
+      "username": "Maria",
+      "email": "wer@kjh.bnm",
+      "password": "iuy"
+    },
+    {
+      "id": 3,
+      "username": "Kjhgasd",
+      "email": "m06121995@gmail.com",
+      "password": "gfd"
+    },
+    {
+      "id": 4,
+      "username": "User",
+      "email": "tiperus@ukr.net",
+      "password": "dfg"
+    },
+    {
+      "id": 5,
+      "username": "Vasia",
+      "email": "tiperus@ukr.net",
+      "password": "dfg"
+    },
+    {
+      "id": 6,
+      "username": "Ivan",
+      "email": "acj@tlen.pl",
+      "password": "lkj"
+    },
+    {
+      "id": 7,
+      "username": "Fiedia",
+      "email": "tiperus@ukr.net",
+      "password": "asd"
+    },
+    {
+      "id": 8,
+      "username": "Ihor",
+      "email": "tiperus@gmail.com",
+      "password": "fgh"
+    },
+    {
+      "id": 9,
+      "username": "Taraszxc",
+      "email": "tiperus@ukr.net",
+      "password": "sdf"
+    },
+    {
+      "id": 10,
+      "username": "Vitia",
+      "email": "tiperus@ukr.net",
+      "password": "xcv"
+    },
+    {
+      "id": 11,
+      "username": "Tarasjhg",
+      "email": "tiperus@ukr.net",
+      "password": "вап"
+    },
+    {
+      "id": 12,
+      "username": "Ponomarenko",
+      "email": "acj@tlen.pl",
+      "password": "sdf"
+    },
+    {
+      "id": 13,
+      "username": "Fufu",
+      "email": "m06121995@gmail.com",
+      "password": "dfg"
+    }
+  ],
+  "chat": [
+    {
+      "id": 4,
+      "postedBy": "Maria",
+      "date": "2020-09-01T19:30:54.879Z",
+      "topic": "asdsdfsdf",
+      "message": "sdfsdf"
+    },
+    {
+      "id": 5,
+      "postedBy": "Taras",
+      "topic": "zxczxc",
+      "date": "2020-09-01T19:35:39.993Z",
+      "message": "zxczxc"
+    },
+    {
+      "id": 6,
+      "postedBy": "Taras",
+      "topic": "asdsdfsdf",
+      "date": "2020-09-01T19:45:11.427Z",
+      "message": "asdasd"
+    },
+    {
+      "id": 7,
+      "postedBy": "Taras",
+      "topic": "asd",
+      "date": "2020-09-01T19:49:50.487Z",
+      "message": "asdasd"
+    },
+    {
+      "id": 8,
+      "postedBy": "Maria",
+      "topic": "asdsdfsdf",
+      "date": "2020-09-01T19:51:49.110Z",
+      "message": "hdfghdfgh hhhdfhd"
+    },
+    {
+      "id": 9,
+      "postedBy": "Taras",
+      "topic": "asdsdfsdf",
+      "date": "2020-09-01T19:56:13.408Z",
+      "message": "hdfghdfgh hhhdfhd"
+    },
+    {
+      "id": 10,
+      "postedBy": "Taras",
+      "topic": "asdsdfsdf",
+      "date": "2020-09-02T05:44:39.805Z",
+      "message": "asdasd"
+    },
+    {
+      "id": 11,
+      "postedBy": "Maria",
+      "topic": "asdsdfsdf",
+      "date": "2020-09-02T05:50:07.056Z",
+      "message": "sdfsdfsdf"
     }
   ]
 }

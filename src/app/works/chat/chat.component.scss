@@ -1,0 +1,15 @@
+// <input _ngcontent-ndj-c103="" type="email" id="inputEmail3" formcontrolname="email" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-name="email">
+
+
+.ng-touched{
+    border: 2px gray solid;
+}
+.ng-invalid{
+    border: 2px red solid;
+}
+.ng-valid{
+    border: 2px green solid;
+}
+.ng-untouched{
+    border: 2px blue solid;
+}
